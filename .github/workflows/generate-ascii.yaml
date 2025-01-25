@@ -1,0 +1,27 @@
+name: Generate ASCII Artwork
+
+on:
+  push
+
+jobs:
+    ascii_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout Repo
+          uses: actions/checkout@v4
+            
+        - name: List Repo Files
+          run: ls -ltra
+
+        - name: Debug Workspace
+          run: ls -R # Debug file structure
+
+        - name: Executing Shell Script
+          run: |
+            if [ -f "ascii-script.sh" ]; then
+              chmod +x ascii-script.sh
+              ./ascii-script.sh
+            else
+              echo "ascii-script.sh not found. Exiting."
+              exit 1
+            fi
