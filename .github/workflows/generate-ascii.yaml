@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
-      uses: actions/checkout@v3  # Use the latest stable version
+      uses: actions/checkout@v4  # Use the latest stable version
       
     - name: Debug Workspace
       run: ls -R  # Inspect workspace to verify file structure
